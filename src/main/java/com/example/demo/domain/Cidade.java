@@ -1,48 +1,35 @@
 package com.example.demo.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+
 
 @Entity
-
-public class Produto implements Serializable{
-
+public class Cidade implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
-    private double preco;
 
-    @JsonBackReference
-    @ManyToMany
-    @JoinTable(
-        name = "Produto_Categoria", joinColumns = @JoinColumn(name = "produto_id"),
-        inverseJoinColumns = @JoinColumn(name = "categoria_id")
-    )
-    private List<Categoria> categorias = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "estado_id")
+    private  Estado estado;
+
     
-    public Produto() {
+    public Cidade() {
     }
 
 
-    public Produto(int id, String nome, double preco) {
-
+    public Cidade(int id, String nome, Estado estado) {
         this.id = id;
         this.nome = nome;
-        this.preco = preco;
+        this.estado = estado;
     }
 
 
@@ -66,13 +53,13 @@ public class Produto implements Serializable{
     }
 
 
-    public double getPreco() {
-        return preco;
+    public Estado getEstado() {
+        return estado;
     }
 
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 
 
@@ -93,31 +80,13 @@ public class Produto implements Serializable{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Produto other = (Produto) obj;
+        Cidade other = (Cidade) obj;
         if (id != other.id)
             return false;
         return true;
     }
 
-
-    public List<Categoria> getCategorias() {
-        return categorias;
-    }
-
-
-    public void setCategorias(List<Categoria> categorias) {
-        this.categorias = categorias;
-    }
-
     
 
 
-
-    
-
-
-    
-
-
-    
 }
