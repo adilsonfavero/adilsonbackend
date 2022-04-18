@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import org.hibernate.annotations.ManyToAny;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +22,7 @@ public class Produto implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String nome;
     private double preco;
 
@@ -38,7 +38,7 @@ public class Produto implements Serializable{
     }
 
 
-    public Produto(int id, String nome, double preco) {
+    public Produto(Integer id, String nome, double preco) {
 
         this.id = id;
         this.nome = nome;

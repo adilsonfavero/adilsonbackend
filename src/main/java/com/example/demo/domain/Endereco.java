@@ -2,6 +2,8 @@ package com.example.demo.domain;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,9 +22,12 @@ public class Endereco implements Serializable{
     private String complemento;
     private String bairro;
     private String cep;
+
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+
     @ManyToOne
     @JoinColumn(name = "cidade_id")
     private Cidade cidade;    
@@ -32,11 +37,11 @@ public class Endereco implements Serializable{
     }
 
 
-    public Endereco(Integer id, String logradouro, String nuero, String complemento, String bairro, String cep,
+    public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep,
             Cliente cliente, Cidade cidade) {
         this.id = id;
         this.logradouro = logradouro;
-        this.numero = nuero;
+        this.numero = numero;
         this.complemento = complemento;
         this.bairro = bairro;
         this.cep = cep;
@@ -65,13 +70,13 @@ public class Endereco implements Serializable{
     }
 
 
-    public String getNuero() {
+    public String getNumero() {
         return numero;
     }
 
 
-    public void setNuero(String nuero) {
-        this.numero = nuero;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
 

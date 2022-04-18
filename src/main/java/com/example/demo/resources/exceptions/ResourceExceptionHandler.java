@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpServerErrorException;
 
-import jakarta.servlet.http.HttpSession;
+
 
 @ControllerAdvice
 public class ResourceExceptionHandler{

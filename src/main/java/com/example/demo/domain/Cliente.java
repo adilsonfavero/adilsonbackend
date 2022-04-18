@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 
 import com.example.demo.domain.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
@@ -22,23 +24,32 @@ public class Cliente implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String nome;
     private String email;
     private String cpfOuCnpj;
     private int tipo;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "cliente")
     private List<Endereco> enderecos = new ArrayList<>();
+
     @ElementCollection
     @CollectionTable(name = "TELEFONE")
     private Set<String> telefones = new HashSet<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "cliente")    
+    private List<Pedido> pedidos = new ArrayList<>();
+
+    
 
     public Cliente(){
 
     }
 
-    public Cliente(int id, String nome, String email, String cpfOuCnpj, TipoCliente tipo) {
+    public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo) {
+        super();
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -46,11 +57,11 @@ public class Cliente implements Serializable{
         this.tipo = tipo.getCod();
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -100,6 +111,14 @@ public class Cliente implements Serializable{
 
     public void setTelefones(Set<String> telefones) {
         this.telefones = telefones;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 
     @Override
