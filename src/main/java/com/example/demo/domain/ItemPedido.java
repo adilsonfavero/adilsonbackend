@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -13,6 +14,7 @@ public class ItemPedido implements Serializable{
     private int quantidade;
     private double preco;
 
+    @JsonIgnore
     @EmbeddedId
     private ItemPedidoPK id = new ItemPedidoPK();
     
@@ -62,11 +64,12 @@ public class ItemPedido implements Serializable{
         this.id = id;
     }
 
-    
+    @JsonIgnore
     public Pedido getPedido(){
         return id.getPedido();
     }
 
+    
     public Produto getProduto(){
         return id.getProduto();
     }
