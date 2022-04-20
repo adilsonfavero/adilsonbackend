@@ -1,12 +1,15 @@
 package com.example.demo.resources.exceptions;
 
-public class StandardError {
+import java.io.Serializable;
+
+public class StandardError implements Serializable{
     private int status;
     private String msg;
     private Long timeStamp;
 
     
     public StandardError(int status, String msg, Long timeStamp) {
+        super();
         this.status = status;
         this.msg = msg;
         this.timeStamp = timeStamp;

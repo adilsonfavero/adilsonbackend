@@ -8,7 +8,6 @@ import java.util.Set;
 
 import com.example.demo.domain.enums.TipoCliente;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CollectionTable;
