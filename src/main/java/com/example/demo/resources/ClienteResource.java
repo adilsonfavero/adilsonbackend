@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import com.example.demo.domain.Cliente;
 import com.example.demo.services.ClienteService;
 import com.example.dto.ClienteDTO;
+import com.example.dto.ClienteNewDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -52,7 +53,7 @@ public class ClienteResource {
     }
 
     @PostMapping(value= "/", consumes = {"application/json"})
-    public ResponseEntity<Void> insert(@Valid @RequestBody ClienteDTO objDto){
+    public ResponseEntity<Void> insert(@Valid @RequestBody ClienteNewDTO objDto){
         Cliente obj = service.fromDTO(objDto);
         obj = service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()

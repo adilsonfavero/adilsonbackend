@@ -9,7 +9,7 @@ public class ValidationError extends  StandardError{
 
     public ValidationError(int status, String msg, Long timeStamp) {
         super(status, msg, timeStamp);
-        //TODO Auto-generated constructor stub
+
     }
 
 
