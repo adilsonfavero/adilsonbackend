@@ -4,12 +4,14 @@ import java.util.Date;
 
 import com.example.demo.domain.enums.EstadoPagamento;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import jakarta.persistence.Entity;
 
 
 
 @Entity
+@JsonTypeName("pagamentoComBoleto")
 public class PagamentoComBoleto extends Pagamento{
     
     @JsonFormat(pattern="dd/MM/yyyy")
