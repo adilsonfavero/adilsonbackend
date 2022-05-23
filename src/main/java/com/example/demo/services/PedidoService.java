@@ -10,7 +10,7 @@ import com.example.demo.domain.enums.EstadoPagamento;
 import com.example.demo.repositories.ItemPedidoRepository;
 import com.example.demo.repositories.PagamentoRepository;
 import com.example.demo.repositories.PedidoRepository;
-import com.example.demo.repositories.ProdutoRepository;
+
 import com.example.exceptions.ObjectNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
