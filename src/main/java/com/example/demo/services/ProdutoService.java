@@ -4,10 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.domain.Categoria;
-import com.example.demo.domain.Pedido;
 import com.example.demo.domain.Produto;
 import com.example.demo.repositories.CategoriaRepository;
-import com.example.demo.repositories.PedidoRepository;
 import com.example.demo.repositories.ProdutoRepository;
 import com.example.exceptions.ObjectNotFoundException;
 
