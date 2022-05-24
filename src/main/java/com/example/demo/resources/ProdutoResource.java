@@ -4,9 +4,9 @@ package com.example.demo.resources;
 import java.util.List;
 
 import com.example.demo.domain.Produto;
+import com.example.demo.dto.ProdutoDTO;
 import com.example.demo.resources.utils.URL;
 import com.example.demo.services.ProdutoService;
-import com.example.dto.ProdutoDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

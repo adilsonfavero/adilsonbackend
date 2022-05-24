@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.domain.Categoria;
+import com.example.demo.dto.CategoriaDTO;
+import com.example.demo.exceptions.DataIntegrityException;
+import com.example.demo.exceptions.ObjectNotFoundException;
 import com.example.demo.repositories.CategoriaRepository;
-import com.example.dto.CategoriaDTO;
-import com.example.exceptions.DataIntegrityException;
-import com.example.exceptions.ObjectNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;

@@ -5,9 +5,9 @@ import java.net.URI;
 import javax.validation.Valid;
 
 import com.example.demo.domain.Cliente;
+import com.example.demo.dto.ClienteDTO;
+import com.example.demo.dto.ClienteNewDTO;
 import com.example.demo.services.ClienteService;
-import com.example.dto.ClienteDTO;
-import com.example.dto.ClienteNewDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import com.example.demo.domain.Categoria;
+import com.example.demo.dto.CategoriaDTO;
 import com.example.demo.services.CategoriaService;
-import com.example.dto.CategoriaDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

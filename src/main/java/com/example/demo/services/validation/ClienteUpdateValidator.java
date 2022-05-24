@@ -9,10 +9,9 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import com.example.demo.domain.Cliente;
+import com.example.demo.dto.ClienteDTO;
 import com.example.demo.repositories.ClienteRepository;
 import com.example.demo.resources.exceptions.FieldMessage;
-import com.example.dto.ClienteDTO;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerMapping;

@@ -7,13 +7,12 @@ import com.example.demo.domain.Cidade;
 import com.example.demo.domain.Cliente;
 import com.example.demo.domain.Endereco;
 import com.example.demo.domain.enums.TipoCliente;
-
+import com.example.demo.dto.ClienteDTO;
+import com.example.demo.dto.ClienteNewDTO;
+import com.example.demo.exceptions.DataIntegrityException;
+import com.example.demo.exceptions.ObjectNotFoundException;
 import com.example.demo.repositories.ClienteRepository;
 import com.example.demo.repositories.EnderecoRepository;
-import com.example.dto.ClienteDTO;
-import com.example.dto.ClienteNewDTO;
-import com.example.exceptions.DataIntegrityException;
-import com.example.exceptions.ObjectNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;

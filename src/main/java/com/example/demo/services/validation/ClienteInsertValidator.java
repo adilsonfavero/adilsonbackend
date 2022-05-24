@@ -9,10 +9,10 @@ import javax.validation.ConstraintValidatorContext;
 
 import com.example.demo.domain.Cliente;
 import com.example.demo.domain.enums.TipoCliente;
+import com.example.demo.dto.ClienteNewDTO;
 import com.example.demo.repositories.ClienteRepository;
 import com.example.demo.resources.exceptions.FieldMessage;
 import com.example.demo.services.validation.utils.BR;
-import com.example.dto.ClienteNewDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

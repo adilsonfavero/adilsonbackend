@@ -1,7 +1,7 @@
 package com.example.demo.resources.exceptions;
 
-import com.example.exceptions.DataIntegrityException;
-import com.example.exceptions.ObjectNotFoundException;
+import com.example.demo.exceptions.DataIntegrityException;
+import com.example.demo.exceptions.ObjectNotFoundException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
